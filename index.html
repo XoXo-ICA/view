@@ -2,7 +2,7 @@
 <html>
     <body id="body">
         <button id="play" onclick="play()">Play</button>
-        <marquee id="M" behavior="" scrollamount="25" direction="left"><img src="R.png"/></marquee>
+        <marquee id="M" behavior="" scrollamount="20" direction="left"><img src="R.png"/></marquee>
         <img id="man" src="Z.gif"></img>
         <hr id="tag"></hr>
         <img id="pa" src="L.png"></img>
@@ -40,6 +40,7 @@ border-width: 2px;
     color: white;
 }
 #M{
+    visibility: hidden;
     position: absolute;
     width: 100%;
     overflow: hidden;
