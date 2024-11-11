@@ -2,8 +2,9 @@
 <html>
     <body id="body">
         <button id="play" onclick="play()">Play</button>
-        <marquee id="M" scrollamount="30" direction="left"><img src="R.png"/><img src="R.png"/><img src="R.png"/></marquee>
+        <marquee id="M" direction="left"><img src="R.png"/><img src="R.png"/><img src="R.png"/></marquee>
         <img src="Z.gif"></img>
+        <hr id="tag"></hr>
     </body>
 </html>
 
@@ -42,6 +43,11 @@ border-width: 2px;
     width: 100%;
     transform: translate(0.57%);
 }
+#tag{
+    height: 20px;
+    width: 100%;
+    background-color: rgb(206, 206, 172);
+}
 </style>
 
 <script>
@@ -53,3 +59,4 @@ border-width: 2px;
         document.getElementById("M").style.visibility = "visible"
     }
 </script>
+
