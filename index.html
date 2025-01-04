@@ -1,83 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <body id="body">
-        <button id="play" onclick="play()">Play</button>
-        <img id="man" src="Z.gif"></img>
-        <hr id="tag"></hr>
-        <img id="pa" src="L.png"></img>
-    
-        <input list="co">
-
-    <datalist id="co">
-    <option value="Contact"><button></button></option>
-    <option value="b"><button>Click Here</button></option>
-
-      </datalist>
-      </body>
-</html>
-
+<title>a</title>
+<button onclick="Type()">click</button>
+<input typeof="text" id="A">
 <style>
-body{
-    overflow: hidden;
-}
-img{
-    height: 10%;
-    width: 5%;
-    margin: 0px;
-    image-rendering: pixelated;
-}
-#play{
-position: absolute;
-top: 50%;
-right: 50%;
-height: 20%;
-width: 20%;
-transform: translate(50%,-40%);
-font-size: 38px;
-border-color: black;
-border-width: 2px;
-}
+  #A{
+    color: gray;
+  }
 
-#play:hover{
-    box-shadow: 0 0 20px 0 gold;
-    background-color: rgb(60, 60, 146);
-    border: solid;
-    border-color: black;
-    border-width: 3px;
-    color: white;
-}
-#tag{
-    height: 10px;
-    width: 100%;
-    background-color: rgb(206, 206, 172);
-    position: absolute;
-    top: 4%;
-}
-#man{
-  position: absolute;
-  bottom: 7%;
-  height: 15%;
-  width: 10%;
-  overflow: hidden;
-  visibility: hidden;
-}
-#pa{
-  position: absolute;
-  bottom: -1%;
-  left: -10%;
-  width: 110%;
-  height: 30%;
-  visibility: hidden;
-}
 </style>
 
 <script>
-    let color = "rgb(201, 147, 0)";
-
-    function play(){
-        document.getElementById("play").style.visibility ="hidden"
-        document.getElementById("man").style.visibility ="visible"
-        document.getElementById("pa").style.visibility ="visible"
-        document.getElementById("body").style.backgroundColor = color
-    }
+  function Type(){
+    let comment = document.createElement("div");
+    comment.id = "A"
+    comment.innerHTML = document.getElementById("A").value;
+   document.body.appendChild(comment);
+  }
 </script>
