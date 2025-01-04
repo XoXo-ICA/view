@@ -1,18 +1,125 @@
-<title>a</title>
-<button onclick="Type()">click</button>
-<input typeof="text" id="A">
+<button onclick="autofill()" id="fill" onmouseleave="WB()">No Current Email</button>
+<button onclick="autofill1()" id="fill1">No Current Password</button>
+<hr id="bo"></hr>
+<hr id="co"></hr>
+<input typeof="email" placeholder="Ex: Nick1@gmail.com" id="email" onmouseenter="WA()">
+<input typeof="password" placeholder="Ex: ABC123" id = "pass">
+<button onclick="submit()" id="Sub">Submit</button>
+<u id="text">Email</u>
+<u id="P">Password</u>
+<b id="Log">LOGIN</b>
 <style>
-  #A{
-    color: gray;
-  }
-
+#fill{
+  position: absolute;
+  left: 36%;
+  top: 14%;
+  visibility: hidden;
+}
+#fill1{
+  position: absolute;
+  left: 36%;
+  top: 16%;
+  visibility: hidden;
+}
+#log{
+  position: absolute;
+  left: 36%;
+  top: 2%; 
+}
+#co{
+  background-color: black;
+  width: 29.6%;
+  height: 5px;
+  position: absolute;
+  top: 3.5%;
+  left: 35.2%;
+}
+#sub{
+  position: absolute;
+  left: 36%;
+  top: 31%; 
+}
+#text{
+  position: absolute;
+  left: 36%;
+  top: 8.5%;
+}
+#P{
+  position: absolute;
+  left: 36%;
+  top: 18.5%;
+}
+#bo{
+  background-color: lightgray;
+  height: 35%;
+  width: 30%;
+  border-radius: 20px;
+  border-color: black;
+  
+}
+#pass{
+  position: absolute;
+  left: 36%;
+  top: 21%;
+}
+#pass:hover{
+  border-color: blue;
+}
+#email{
+  position: absolute;
+  left: 36%;
+  top: 11%;
+}
+#email:hover{
+  border-color: blue;
+}
+#fill:hover{
+  background-color: gray;
+  color: white
+}
+#Sub:hover{
+  background-color: gray;
+  color: white
+}
 </style>
 
 <script>
-  function Type(){
-    let comment = document.createElement("div");
-    comment.id = "A"
-    comment.innerHTML = document.getElementById("A").value;
-   document.body.appendChild(comment);
+  let semail = ""
+  let spass = ""
+  let color = "gray"
+  let email = document.getElementById("email")
+  let pass = document.getElementById("pass")
+  function WA(){
+  document.getElementById("fill").style.visibility = "visible"
+  document.getElementById("fill1").style.visibility = "visible"
   }
+
+  function WB(){
+  document.getElementById("fill").style.visibility = "hidden"
+  document.getElementById("fill1").style.visibility = "hidden"
+  }
+
+
+  function submit(){
+    semail =   document.getElementById("email").value
+    spass =   document.getElementById("pass").value
+    document.getElementById("email").value = ""
+    document.getElementById("pass").value = ""
+    document.getElementById("fill").innerHTML = semail
+    document.getElementById("fill1").innerHTML = spass
+
+  }
+
+  function autofill(){
+    document.getElementById("email").value = semail
+    document.getElementById("pass").value = spass
+
+  }
+  function autofill1(){
+    document.getElementById("email").value = semail
+    document.getElementById("pass").value = spass
+  }
+
+
+ 
 </script>
