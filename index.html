@@ -1,3 +1,5 @@
+<button id="name" onclick="function1()">NIL</button>
+
 <!-- webpage  main-->  
 <body style="background-color: rgb(184, 179, 179);"></body>
 <b id="Nbream">Nbream</b>
@@ -36,6 +38,19 @@
 </div>
 
 </div>
+<style>
+  #name{
+    height: 25px;
+    width: 100px;
+    position: absolute;
+    right: 1%;
+    top: 3.5%;
+    font-size: large;   
+    overflow:hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+</style>
 <style>
   #LO{
     background-color: black;
@@ -343,6 +358,7 @@
     document.getElementById("Pa").style.visibility = "hidden"
     document.getElementById("text1").style.visibility = "hidden"
     document.getElementById("reg").style.visibility = "hidden"
+    document.getElementById("name").innerHTML = semail
   }
 
   function autofill(){
