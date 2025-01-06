@@ -1,4 +1,6 @@
 <button id="name" onclick="function1()">NIL</button>
+<button id="switch" onclick="outs()">Logout</button>
+<button id="switch2" onclick="Vis()">Login</button>
 
 <!-- webpage  main-->  
 <body style="background-color: rgb(184, 179, 179);"></body>
@@ -7,12 +9,10 @@
 <img src="K (2).JPEG" alt="Achievement" id="chess">
 <img src="L.JPEG" alt="Achievement" id="nitrotype">
 <hr id="Pw"></hr>
-<button id="reg">Register</button>
+<button id="reg" onclick="heart()">Register</button>
 <button id="loge" onclick="Vis()">Login</button>
 <!-- webpage  main-->  
 <!-- Login main-->
-<button onclick="autofill()" id="fill" onmouseleave="WB()">No Current Email</button>
-<button onclick="autofill1()" id="fill1">No Current Password</button>
 <hr id="bo"></hr>
 <hr id="co"></hr>
 <input typeof="email" placeholder="Ex: Nick1@gmail.com" id="email" onmouseenter="WA()">
@@ -26,13 +26,15 @@
 <!-- Login main-->
 <hr id="bo2"></hr>
 <hr id="co2"></hr>
-<input typeof="email" placeholder="Ex: Nick1@gmail.com" id="email2" onmouseenter="WA()">
+<input typeof="email" placeholder="Ex: Nick1@gmail.com" id="email2">
 <input typeof="password" placeholder="Ex: ABC123" id = "pass2">
 <button onclick="submit()" id="Sub2">Submit</button>
 <u id="text1">Email</u>
 <u id="Pa">Password</u>
 <b id="register1">REGISTER</b>
 <!-- Login main-->  
+<button onclick="autofill()" id="fill" onmouseleave="WB()">No Current Email</button>
+<button onclick="autofill1()" id="fill1">No Current Password</button>
 <div id="AW">
   <hr id="frame"><b id="success">Success</b><img src="R (12).PNG" alt="Sucess" id="Check"><button onclick="close1()" id="close1">X</button></hr><hr id="LO"></hr>
 </div>
@@ -41,7 +43,7 @@
 <style>
   #name{
     height: 25px;
-    width: 100px;
+    width: 200px;
     position: absolute;
     right: 1%;
     top: 3.5%;
@@ -49,6 +51,7 @@
     overflow:hidden;
     text-overflow: ellipsis;
     text-align: center;
+    visibility: hidden;
   }
 </style>
 <style>
@@ -115,6 +118,22 @@
     top: 2.5%;
 
   }
+  #switch2{
+    height: 20px;
+    width: 200px;
+    position: absolute;
+    right: 1%;
+    top: 8%;
+    visibility: hidden;
+  }
+  #switch{
+    height: 20px;
+    width: 200px;
+    position: absolute;
+    right: 1%;
+    top: 8%;
+    visibility: hidden;
+  }
   #loge{
     height: 50px;
     width: 100px;
@@ -179,6 +198,7 @@
     position: absolute;
     left: 36%;
     top: 26.5%; 
+    visibility: hidden;
   }
   #co2{
     background-color: black;
@@ -187,21 +207,29 @@
     position: absolute;
     top: 28%;
     left: 35.2%;
+    visibility: hidden;
+
   }
   #sub2{
     position: absolute;
     left: 36%;
     top: 55.5%; 
+    visibility: hidden;
+
   }
   #text1{
     position: absolute;
     left: 36%;
     top: 33%;
+    visibility: hidden;
+
   }
   #Pa{
     position: absolute;
     left: 36%;
     top: 43%;
+    visibility: hidden;
+
   }
   #bo2{
     background-color: lightgray;
@@ -212,11 +240,15 @@
     right: 34.9%;
     border-radius: 20px;
     border-color: black;
+    visibility: hidden;
+
   }
   #pass2{
     position: absolute;
     left: 36%;
     top: 45.5%;
+    visibility: hidden;
+
   }
   #pass2:hover{
     border-color: blue;
@@ -225,6 +257,8 @@
     position: absolute;
     left: 36%;
     top: 35.5%;
+    visibility: hidden;
+
   }
   #email2:hover{
     border-color: blue;
@@ -239,19 +273,19 @@
 #fill{
   position: absolute;
   left: 36%;
-  top: 14%;
+  top: 38%;
   visibility: hidden;
 }
 #fill1{
   position: absolute;
   left: 36%;
-  top: 16%;
+  top: 40%;
   visibility: hidden;
 }
 #log{
   position: absolute;
   left: 36%;
-  top: 2%; 
+  top: 26.5%; 
   visibility: hidden;
 }
 #co{
@@ -259,26 +293,26 @@
   width: 29.6%;
   height: 5px;
   position: absolute;
-  top: 3.5%;
+  top: 28%;
   left: 35.2%;
   visibility: hidden;
 }
 #sub{
   position: absolute;
-  left: 36%;
-  top: 31%; 
+  left:  36%;
+  top: 55.5%; 
   visibility: hidden;
 }
 #text{
   position: absolute;
   left: 36%;
-  top: 8.5%;
+  top: 33%;
   visibility: hidden;
 }
 #P{
   position: absolute;
   left: 36%;
-  top: 18.5%;
+  top: 43%;
   visibility: hidden;
 }
 #bo{
@@ -286,7 +320,7 @@
   height: 35%;
   width: 30%;
   position: absolute;
-  top: .5%;
+  top: 25%;
   right: 34.9%;
   border-radius: 20px;
   border-color: black;
@@ -295,7 +329,7 @@
 #pass{
   position: absolute;
   left: 36%;
-  top: 21%;
+  top: 45.5%;
   visibility: hidden;
 }
 #pass:hover{
@@ -304,7 +338,7 @@
 #email{
   position: absolute;
   left: 36%;
-  top: 11%;
+  top: 35.5%;
   visibility: hidden;
 }
 #email:hover{
@@ -324,8 +358,8 @@
   let semail = ""
   let spass = ""
   let color = "gray"
-  let email = document.getElementById("email")
-  let pass = document.getElementById("pass")
+  let email = document.getElementById("email2")
+  let pass = document.getElementById("pass2")
   function WA(){
   document.getElementById("fill").style.visibility = "visible"
   document.getElementById("fill1").style.visibility = "visible"
@@ -336,10 +370,22 @@
   document.getElementById("fill1").style.visibility = "hidden"
   }
 
+  function heart(){
+    document.getElementById("register1").style.visibility = "visible"
+    document.getElementById("co2").style.visibility = "visible"
+    document.getElementById("Sub2").style.visibility = "visible"
+    document.getElementById("text1").style.visibility = "visible"
+    document.getElementById("Pa").style.visibility = "visible"
+    document.getElementById("bo2").style.visibility = "visible"
+    document.getElementById("pass2").style.visibility = "visible"
+    document.getElementById("email2").style.visibility = "visible"
 
+
+
+}
   function submit(){
-    semail =   document.getElementById("email2").value
-    spass =   document.getElementById("pass2").value
+    semail = document.getElementById("email2").value
+    spass = document.getElementById("pass2").value
     document.getElementById("email2").value = ""
     document.getElementById("pass2").value = "" 
     document.getElementById("fill").innerHTML = semail
@@ -359,8 +405,30 @@
     document.getElementById("text1").style.visibility = "hidden"
     document.getElementById("reg").style.visibility = "hidden"
     document.getElementById("name").innerHTML = semail
-  }
+    document.getElementById("name").style.visibility = "visible"
 
+  }
+  function submit1(){
+    
+    document.getElementById("email").value = ""
+    document.getElementById("pass").value = "" 
+    document.getElementById("success").style.visibility = "visible"
+    document.getElementById("LO").style.visibility = "visible"
+    document.getElementById("close1").style.visibility = "visible"
+    document.getElementById("Check").style.visibility = "visible"
+    document.getElementById("frame").style.visibility = "visible"
+    document.getElementById("bo").style.visibility = "hidden"
+    document.getElementById("text").style.visibility = "hidden"
+    document.getElementById("Log").style.visibility = "hidden"
+    document.getElementById("co").style.visibility = "hidden"
+    document.getElementById("email").style.visibility = "hidden"
+    document.getElementById("pass").style.visibility = "hidden"
+    document.getElementById("P").style.visibility = "hidden"
+    document.getElementById("Sub").style.visibility = "hidden"
+    document.getElementById("reg").style.visibility = "hidden"
+    document.getElementById("switch2").style.visibility = "hidden"
+    document.getElementById("name").innerHTML = semail
+  }
   function autofill(){
     document.getElementById("email").value = semail
     document.getElementById("pass").value = spass
@@ -387,6 +455,16 @@
   document.getElementById("close1").style.visibility = "hidden"
   document.getElementById("Check").style.visibility = "hidden"
   document.getElementById("frame").style.visibility = "hidden"
+
+  }
+  function function1(){
+  document.getElementById("switch").style.visibility = "visible"
+  }
+  function outs(){
+  document.getElementById("name").innerHTML = "logged out"
+  document.getElementById("switch").style.visibility = "hidden"
+ document.getElementById("switch2").style.visibility = "visible"
+
 
   }
 </script>
